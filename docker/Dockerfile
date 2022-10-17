@@ -1,4 +1,4 @@
-FROM openjdk:18-jdk-slim-bullseye
+FROM openjdk:18
 
 WORKDIR /var/app
 

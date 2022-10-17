@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-boot-docker
+    kyma-grafana: enabled
+  name: spring-boot-docker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-docker
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-boot-docker
+        kyma-grafana: enabled
+    spec:
+      containers:
+      - image: pandeysuresh06/spring-boot-docker:0.6.0
+        name: spring-boot-docker
+        resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"
+        ports:
+          - containerPort: 8080
+        envFrom:
+          - secretRef:
+              name: spring-boot-docker
+              optional: true
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-boot-docker
+  name: spring-boot-docker
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: spring-boot-docker
+  type: ClusterIP
+status:
+  loadBalancer: {}
