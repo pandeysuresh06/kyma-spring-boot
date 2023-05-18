@@ -5,4 +5,4 @@ ENV JAVA_OPTS=""
 EXPOSE 8080
 
 
-CMD java $JAVA_OPTS -jar /spring-boot-docker.jar
+CMD java $JAVA_OPTS -jar spring-boot-docker.jar
