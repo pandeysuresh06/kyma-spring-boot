@@ -1,5 +1,5 @@
 FROM openjdk:18
-WORKDIR /var/app
+#WORKDIR /var/app
 ADD spring-boot-docker-*.jar /var/app/spring-boot-docker.jar
 ENV JAVA_OPTS=""
 EXPOSE 8080
