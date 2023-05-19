@@ -8,7 +8,7 @@ RUN mvn package
 
 FROM openjdk:18
 ARG JAR_FILE=spring-boot-docker-0.5.0.jar
-WORKDIR var/app
+WORKDIR /var/app
 COPY  --from=maven /usr/src/app/target/${JAR_FILE} /var/app/
 ENV JAVA_OPTS=""
 EXPOSE 8080
