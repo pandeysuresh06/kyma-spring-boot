@@ -18,6 +18,5 @@ spec:
         - DELETE
       path: /.*
   service:
-    host: spring-boot-docker
     name: spring-boot-docker
     port: 8080
