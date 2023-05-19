@@ -1,8 +1,9 @@
 FROM openjdk:18
-WORKDIR /var/app
-ADD target/spring-boot-docker-*.jar /var/app/spring-boot-docker.jar
+WORKDIR /app
+ADD target/spring-boot-docker-*.jar /app/spring-boot-docker.jar
 ENV JAVA_OPTS=""
 EXPOSE 8080
 
 
-CMD java $JAVA_OPTS -jar spring-boot-docker.jar
+
+ENTRYPOINT ["java", "-jar", "spring-boot-docker.jar"]
