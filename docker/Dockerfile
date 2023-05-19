@@ -6,7 +6,7 @@ COPY . /usr/src/app
 # Compile and package the application to an executable JAR
 RUN mvn package
 
-FROM openjdk:18
+FROM openjdk:17
 ARG JAR_FILE=spring-boot-docker-0.5.0.jar
 WORKDIR /var/app
 COPY  --from=maven /usr/src/app/target/${JAR_FILE} /var/app/
