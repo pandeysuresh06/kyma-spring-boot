@@ -21,7 +21,7 @@ spec:
         kyma-grafana: enabled
     spec:
       containers:
-      - image: pandeysuresh06/sapcicd:0.1.0
+      - image: pandeysuresh06/sapcicd:0.2.0
         name: spring-boot-docker
         resources:
             limits:
