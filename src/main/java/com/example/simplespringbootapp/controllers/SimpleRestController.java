@@ -8,6 +8,6 @@ public class SimpleRestController {
 
     @GetMapping(path="/hello-world")
     public String sayHello(){
-        return new String("Hello CI/CD application through KYMA");
+        return new String("Testing SAP CI/CD application through KYMA");
     }
 }
