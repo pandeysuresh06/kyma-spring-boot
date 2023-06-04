@@ -8,6 +8,6 @@ public class SimpleRestController {
 
     @GetMapping(path="/hello-world")
     public String sayHello(){
-        return new String("Hello Simple test for SAP CI/CD process ");
+        return new String("Hello Simple test for SAP CI/CD process");
     }
 }
