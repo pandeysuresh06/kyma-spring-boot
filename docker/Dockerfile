@@ -1,4 +1,5 @@
 FROM maven:3.8.3-openjdk-17 AS maven
+ENV VERSION x.y
 LABEL MAINTAINER="pandeysuresh06@gmail.com"
 
 WORKDIR /usr/src/app
